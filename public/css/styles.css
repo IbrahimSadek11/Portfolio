@@ -1,0 +1,277 @@
+/* Start Variables */
+:root {
+  --main-color: #2196f3;
+  --main-color-alt: #1787e0;
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --section-bg: #f9f9f9;
+  --card-bg: #ffffff;
+  --border-color: #ddd;
+}
+/* End Variables */
+
+/* Start Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Story Script", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+/* End Global Rules */
+
+/*=====  Start of Header Section =====*/
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--main-color);
+  color: white;
+  padding: 15px 20px;
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  top: 0px;
+  left: 0px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;;
+}
+
+.nav-links a:hover {
+  color: #dcdcdc;
+}
+
+#theme-toggle {
+  background-color: var(--main-color);
+  border: none;
+  cursor: pointer;
+}
+#theme-toggle i {
+  color: #ffffff;
+}
+#theme-toggle:hover i{
+  color: #dcdcdc;
+}
+
+
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 0.9rem;
+  }
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+  #header h1 {
+    font-size: 0.8rem;
+  }
+  #theme-toggle {
+    font-size: 0.8rem;
+  }
+}
+/*=====  End of Header Section =====*/
+
+/* ==== Start About me Section ====*/
+#about {
+  padding: 60px 20px;
+  background-color: var(--section-bg);
+  margin-top: 60px;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-image img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--border-color);
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+
+.about-text {
+  max-width: 600px;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  color: var(--main-color-alt);
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+/* ==== End About me Section ====*/
+
+/* ===== Start Skills Section ===== */
+#skills {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: var(--card-bg);
+}
+
+.skills-container {
+  max-width: 600px;
+  width: 100%;
+}
+
+#skills h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--main-color-alt);
+  margin-bottom: 40px;
+}
+
+.skill {
+  margin-bottom: 25px;
+}
+
+.skill p {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: var(--main-color);
+  border-radius: 6px 0 0 6px;
+}
+/* ===== End Skills Section ===== */
+
+/* ===== Start Contact Section ===== */
+#contact {
+  padding: 60px 20px;
+  background: var(--section-bg);
+  display: flex;
+  justify-content: center;
+}
+
+.contact-container {
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 2rem;
+  color: var(--main-color-alt);
+  margin-bottom: 20px;
+}
+
+#contact p {
+  color: var(--text-color);
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--card-bg);
+  color: var(--text-color);
+  transition: all 0.3s ease;;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--main-color);
+  outline: none;
+}
+
+.contact-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: var(--main-color);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;;
+}
+
+.contact-form button:hover {
+  background: var(--main-color-alt);
+  transform: translateY(-2px);
+}
+/* ===== End Contact Section ===== */
+
+/* ===== Start Footer ===== */
+footer {
+  background: var(--main-color);
+  color: white;
+  text-align: center;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+@media (max-width: 768px) {
+    #visit-counter{
+        display: none;
+    }
+}
+/* ===== End Footer ===== */
+
+/* ===== Dark Theme  ===== */
+body.dark-theme {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --section-bg: #1e1e1e;
+  --card-bg: #1e1e1e;
+  --border-color: #333;
+  --main-color: #90caf9;
+  --main-color-alt: #64b5f6;
+}
+/* ===== End Dark Theme  ===== */
