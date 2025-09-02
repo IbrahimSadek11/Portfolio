@@ -23,3 +23,4 @@ localStorage.setItem("visitCount", visits);
 
 document.getElementById("visit-counter").textContent =
    `You have visited this page ${visits} times.`;
+
