@@ -2,7 +2,7 @@ const themeToggle = document.getElementById("theme-toggle");
 
 themeToggle.addEventListener("click", (e) => {
   e.preventDefault();
-  document.body.classList.toggle("dark-theme");//add/remove dark them on body
+  document.body.classList.toggle("dark-theme");
 
   themeToggle.innerHTML = document.body.classList.contains("dark-theme")
     ? '<i class="fa-notdog fa-solid fa-sun"></i>'
@@ -24,3 +24,11 @@ localStorage.setItem("visitCount", visits);
 document.getElementById("visit-counter").textContent =
    `You have visited this page ${visits} times.`;
 
+
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", function() {
+      document.querySelectorAll(".nav-links a").forEach(nav => nav.classList.remove("active"));
+      this.classList.add("active");
+    });
+});
