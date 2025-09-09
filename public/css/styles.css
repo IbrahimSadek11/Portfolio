@@ -11,6 +11,19 @@
 }
 /* End Variables */
 
+
+/* ===== start Dark Theme  ===== */
+body.dark-theme {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --section-bg: #1e1e1e;
+  --card-bg: #1e1e1e;
+  --border-color: #333;
+  --main-color: #64b5f6;
+  --main-color-alt: #90caf9;
+}
+/* ===== End Dark Theme  ===== */
+
 /* Start Global Rules */
 * {
   -webkit-box-sizing: border-box;
@@ -23,7 +36,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: "Story Script", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -100,7 +113,7 @@ body {
   color: #dcdcdc;
 }
 
-.nav-links a.active {
+#header a.active {
   color: var(--active-color);          
   border-bottom: 2px solid var(--active-color);
 }
@@ -169,7 +182,7 @@ body {
 
 .about-text h2 {
   font-size: 2rem;
-  color: var(--main-color-alt);
+  color: var(--main-color);
 }
 
 .about-text p {
@@ -181,6 +194,12 @@ body {
 @media (max-width: 768px) {
 .about-text {
   align-items: center;
+}
+.about-text h2 {
+  font-size: 1.2rem;
+}
+.about-text p {
+  font-size: 0.9rem;
 }
 }
 
@@ -201,31 +220,31 @@ body {
 
 #project h2 {
   font-size: 2rem;
-  color: var(--main-color-alt);
+  color: var(--main-color);
 }
 
 #project .row {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 40px;
   flex-wrap: wrap;
 }
 
 #project .card {
   display: flex;
   flex-direction: column;
-  /* justify-content: flex-start;
-  align-items: center; */
   gap: 10px;
+  max-width: 300px;
+  flex: 1 1 250px;
+  height: 280px;
   border: 1px solid rgba(0, 0, 0, 0.1); 
   border-radius: 8px;
   background: var(--card-bg);
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15);
-  width: calc((750px - 60px) / 3);
-  height: 300px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 #project .card:hover {
   transform: translateY(-3px);
   box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2);
@@ -234,7 +253,7 @@ body {
 #project img {
   display: block;
   width: 100%;
-  height: 176px;
+  max-height: 150px;
   object-fit: cover;
 }
 
@@ -242,23 +261,40 @@ body {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  max-width: 100%;
 }
 
 #project .card-content p:first-child {
-  font-family: "Montserrat", sans-serif;
   font-weight: bold;
-  color: var(--main-color-alt);
+  color: var(--main-color);
   padding: 0px 10px 0px 10px;
+  font-size: 1.1rem;
 }
 
 #project .card-content p:last-child {
+  font-size: 0.9rem;
   line-height: 1.2;
-  font-family: "Lato", sans-serif;
-  font-style: normal;
   color: var(--text-color);
   padding: 0px 10px 5px 10px;
+  display: -webkit-box;        
+  -webkit-line-clamp: 5;      
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: calc(1.2em * 5);
 }
 
+@media (max-width: 768px) {
+  #project h2 {
+    font-size: 1.2rem;
+  }
+  #project .card {
+    height: 280px;
+  }
+  #project .card-content p:first-child{
+    font-size: 1rem;
+  }
+}
 /*     End project section     */
 
 /* ===== Start Skills Section ===== */
@@ -268,6 +304,7 @@ body {
 }
 
 #skills .container {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -276,20 +313,18 @@ body {
 
 #skills h2 {
   font-size: 2rem;
-  color: var(--main-color-alt);
+  color: var(--main-color);
 }
 
 #skills .row-skill {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: start;
   gap: 10px;  
   width: 100%;
-  max-width: 400px;
 }
 
-#skills .row-skill p {
+#skills .row-skill h3 {
   font-size: 1.2rem;
   color: var(--main-color);
   font-weight: bold;
@@ -312,6 +347,13 @@ body {
 }
 
 @media (max-width: 768px) { 
+
+  #skills h2{
+    font-size: 1.2rem;
+  }
+  #skills .row-skill h3 {
+    font-size: 1rem;
+  }
   #skills .child-row-skill ul li {
     font-size: 0.9rem;
   }
@@ -321,12 +363,90 @@ body {
 }
 /* ===== End Skills Section ===== */
 
+/* ===== Start Service Section ===== */
+#services {
+  background-color: var(--bg-color);
+  padding: 60px 0;
+}
+
+#services .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+#services .container h2 {
+  font-size: 2rem;
+  color: var(--main-color);
+}
+
+#services .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+#services .box {
+  display: flex;
+  gap: 10px;
+  max-width: 300px;
+  flex: 1 1 250px;
+  height: 200px;
+} 
+
+#services .box i {
+  color: var(--main-color);
+}
+
+#services .box .text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#services .text-content h3 {
+  color: var(--main-color);
+}
+
+#services .text-content p {
+  line-height: 1.2;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  color: var(--text-color);
+}
+
+
+@media (max-width: 992px) {
+  #services .row {
+    align-items: center;
+    justify-content: center;
+  }
+  #services .box {
+    width: 80%;
+  }
+}
+@media (max-width: 768px) { 
+  #services .container h2 {
+    font-size: 1.2rem;
+  }
+  #services .row i , #services .row h3 {
+    font-size: 1rem;
+  }
+  #services .row p {
+    font-size: 0.9rem;
+  }
+}
+/* ===== End Service Section ===== */
+
 /* ===== Start Contact Section ===== */
 #contact {
   padding: 50px 0px;
   display: flex;
   justify-content: center;
-  background-color: var(--bg-color);
+  background-color: var(--section-bg);
 }
 
 #contact .container {
@@ -339,7 +459,7 @@ body {
 
 #contact h2 {
   font-size: 2rem;
-  color: var(--main-color-alt);
+  color: var(--main-color);
 }
 
 #contact p {
@@ -365,11 +485,12 @@ body {
 }
 
 @media (max-width: 768px) {
-  #contact p {
-    font-size: 1rem;
+  #contact h2 {
+    font-size: 1.2rem;
   }
-  #contact i {
-    font-size: 1rem;
+  
+  #contact p, #contact i {
+    font-size: 0.9rem;
   }
 }
 
@@ -390,20 +511,8 @@ footer {
 }
 
 @media (max-width: 768px) {
-    #visit-counter{
-        display: none;
-    }
+  footer p {
+    font-size: 0.9rem;
+  }
 }
 /* ===== End Footer ===== */
-
-/* ===== Dark Theme  ===== */
-body.dark-theme {
-  --bg-color: #121212;
-  --text-color: #f0f0f0;
-  --section-bg: #1e1e1e;
-  --card-bg: #1e1e1e;
-  --border-color: #333;
-  --main-color: #64b5f6;
-  --main-color-alt: #90caf9;
-}
-/* ===== End Dark Theme  ===== */

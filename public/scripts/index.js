@@ -10,13 +10,11 @@ themeToggle.addEventListener("click", (e) => {
 });
 
 
-//Bonus: Add a counter that tracks how many times the page was visited
 let visits = localStorage.getItem("visitCount");
 
 if (visits === null) {
     visits = 0;
 }
-
 visits++;
 
 localStorage.setItem("visitCount", visits);
@@ -26,9 +24,10 @@ document.getElementById("visit-counter").textContent =
 
 
 
-document.querySelectorAll(".nav-links a").forEach(link => {
+document.querySelectorAll("#header a").forEach(link => {
   link.addEventListener("click", function() {
-      document.querySelectorAll(".nav-links a").forEach(nav => nav.classList.remove("active"));
+      document.querySelectorAll("#header a").forEach(nav => nav.classList.remove("active"));
       this.classList.add("active");
     });
 });
+
